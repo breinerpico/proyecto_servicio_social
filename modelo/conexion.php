@@ -7,7 +7,7 @@
     DEFINE('USER', 'root'); //Crea la constante USER con valor 'root'
     DEFINE('PW', '');
     DEFINE('HOST', 'localhost');
-    DEFINE('BD', 'Proyecto_servicio_social');
+    DEFINE('BD', 'Servicio_Social');
 
     // Parámetros BD remota (infinityfree.com)
     /*DEFINE('USER', 'if0_38542088'); //Crea la constante USER con valor 'if0_38542106'
