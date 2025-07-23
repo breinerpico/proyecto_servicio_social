@@ -1,13 +1,18 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors','1');
+?>
+
+<?php
     require "conexion.php";
 
     // iniciar sesion para guardar los datos del usuario
     session_start();
 
-    $usuario = $_POST['email'];
-    $contraseña = $_POST['contraseña'];
+    $usuario = $_POST['correo'];
+    $password = $_POST['password'];
 
-    $query_1 = "SELECT correo, COUNT(*) AS contar FROM estudiante WHERE correo = '$usuario' AND contraseña = '$contraseña'";
+    $query_1 = "SELECT correo, COUNT(*) AS contar FROM estudiante WHERE correo = '$usuario' AND  = '$password'";
 
     $consulta = mysqli_query($conexion, $query_1) or trigger_error("Error en la consulta MYSQL: " + mysqli_error($conexion));
 
@@ -17,7 +22,7 @@
     {
         $_SESSION['username'] = $usuario;
         //redirigir el usuario a su pagina
-        header("location: ../home.php");
+        header("location: ../pagina_estudiante.php");
 
         /*echo "El usuario existe en la BD <br>";
         echo $resultado ['email'];*/
